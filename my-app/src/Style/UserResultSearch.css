@@ -1,0 +1,113 @@
+
+
+.result {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 400px;
+    margin-right: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.result_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+   
+}
+
+.result_username {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+    max-width: 100%; 
+}
+
+
+.result_follow_button,
+.result_top button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 5px;
+}
+
+.result_follow_button:hover,
+.result_top button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.result_follow_button:focus,
+.result_top button:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.has,
+.needs {
+    margin-bottom: 16px;
+}
+
+.has p,
+.needs p ,.points{
+    font-size: 0.9rem;
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.has p:first-of-type,
+.needs p:first-of-type,.points:first-of-type {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.result button {
+    margin-top: 8px;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .result {
+        max-width: 100%;
+        padding: 12px;
+        margin-right: 0;
+    }
+
+    .result_username {
+        font-size: 1rem;
+    }
+
+    .result_follow_button,
+    .result_top button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,124 @@
+.login, .signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f8ff; 
+    padding: 20px;
+}
+
+.auth Button {
+    margin-right: 10px;
+    display: inline-block;
+    width: 150px;
+    border-radius: 20px; 
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth Button:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px; 
+}
+
+
+
+
+.auth img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.login_elements, .signup_form {
+    background: #ffffff; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login_elements *,.signup_form * {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.login_elements *:focus, .signup_form *:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    outline: none;
+}
+
+
+
+.login_elements button, .signup_form button {
+    background-color: #2575fc;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.login_elements button:hover, .signup_form button:hover {
+    background-color: #6a11cb; 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 15px rgba(106, 17, 203, 0.2);
+}
+
+
+.login_elements a:hover, .signup_form a:hover {
+    color: #6a11cb;
+}
+
+@media (max-width: 768px) {
+    .login, .signup {
+        padding: 10px;
+    }
+
+    .login_elements, .signup_form {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .auth img {
+        width: 80px;
+        height: 80px;
+    }
+}

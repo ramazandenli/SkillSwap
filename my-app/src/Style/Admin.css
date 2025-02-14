@@ -1,0 +1,173 @@
+/* General Styling */
+.admin-page body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.admin-page h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+/* Container Styling */
+.admin-page .admin-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-page .admin-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+.admin-page button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.admin-page button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.admin-page button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Form Styling */
+.admin-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-page input, .admin-page select {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.admin-page input:focus, .admin-page select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* List Styling */
+.admin-page .skills, .admin-page .users {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background-color: #fff;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: background-color 0.3s ease;
+}
+
+.admin-page .skills p, .admin-page .users p {
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 14px;
+    color: #2c3e50;
+    transition: background-color 0.3s ease;
+}
+
+.admin-page .skills p:hover, .admin-page .users p:hover {
+    background-color: #ecf0f1;
+}
+
+.admin-page .skills p:last-child, .admin-page .users p:last-child {
+    border-bottom: none;
+}
+
+/* Stats Section */
+.admin-page .stats {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-page .stats:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.admin-page .stats h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.admin-page .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.admin-page .stat-item {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.admin-page .stat-item h3 {
+    font-size: 18px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.admin-page .stat-item p {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.admin-page .stat-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Adding a subtle animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.admin-page .admin-container {
+    animation: fadeIn 1s ease-out;
+}
