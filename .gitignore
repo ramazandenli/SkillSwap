@@ -128,3 +128,24 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# pnpm
+.pnpm-store/
+
+# prisma migrations dev artifacts
+apps/api/prisma/migrations/dev.db*
+
+# user uploads (dev-only local disk store)
+apps/api/uploads/*
+!apps/api/uploads/.gitkeep
+
+# docker volumes
+.docker-data/
+
+# os
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp

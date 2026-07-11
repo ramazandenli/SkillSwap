@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: skillswap-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: skillswap
+      POSTGRES_PASSWORD: skillswap
+      POSTGRES_DB: skillswap
+    ports:
+      # Host port 5433 → container 5432 to avoid collisions with a native
+      # Windows Postgres install that may already own 5432.
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skillswap -d skillswap"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  adminer:
+    image: adminer:latest
+    container_name: skillswap-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
