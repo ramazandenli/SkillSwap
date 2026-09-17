@@ -1,0 +1,293 @@
+/*
+ * Ana sayfa duzeni.
+ *
+ * Iki sutun: solda kisisel bilgiler (profil, yetenekler, takip), sagda
+ * etkilesim (arama, etkinlikler, degerlendirmeler). Genis ekranda yan yana,
+ * dar ekranda alt alta.
+ */
+
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.home__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+/* --- profil karti --- */
+
+.profile-card__identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.profile-card__name {
+  font-size: 19px;
+}
+
+.profile-card__handle {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.profile-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.profile-card__rating--empty {
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+.profile-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.profile-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.detail dt {
+  color: var(--text-dim);
+}
+
+/* --- etkinlikler --- */
+
+.event-group + .event-group {
+  margin-top: var(--space-5);
+}
+
+.event-group__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.event-group__header h3 {
+  font-size: 14px;
+}
+
+.event-group__header span {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.event-group__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-raised);
+}
+
+.event-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.event-card__user {
+  font-weight: 500;
+}
+
+.event-card__header .badge {
+  margin-left: auto;
+}
+
+.event-card__skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  font-size: 14px;
+}
+
+.event-card__skills dt {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.event-card__dates {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.event-card__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* --- arama --- */
+
+.search-form {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.search-form .field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.result-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-raised);
+}
+
+.result-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.result-card__identity {
+  min-width: 0;
+}
+
+.result-card__name {
+  font-weight: 600;
+}
+
+.result-card__handle {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.result-card__score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  margin-left: auto;
+  font-size: 13px;
+}
+
+.result-card__points {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.result-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-dim);
+}
+
+.result-card__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.result-card__skills-label {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.result-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+}
+
+/* --- degerlendirmeler --- */
+
+.review-list__average {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.review-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.review {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.review__body {
+  min-width: 0;
+}
+
+.review__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.review__author {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.review__date {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.review__comment {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

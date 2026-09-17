@@ -1,0 +1,206 @@
+/*
+ * Mesajlar sayfasi: solda kisi listesi, sagda sohbet.
+ *
+ * Yukseklik hesabi: ust bar yaklasik 57px. calc ile ekran yuksekliginden
+ * onu ve icerik boslugunu dusuyoruz ki sohbet alani sayfayi tasirmadan
+ * kendi icinde kaysin.
+ */
+
+.chat {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: var(--space-4);
+  height: calc(100vh - 57px - var(--space-5) * 2);
+  min-height: 420px;
+}
+
+.chat__sidebar,
+.chat__main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.chat__sidebar-title {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.contact-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.contact:hover {
+  background-color: var(--surface-raised);
+}
+
+.contact--active {
+  background-color: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.contact__name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.chat__peer {
+  font-weight: 600;
+}
+
+.chat__typing {
+  font-size: 13px;
+  color: var(--accent-strong);
+  font-style: italic;
+}
+
+.chat__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--text-faint);
+}
+
+/* --- mesajlar --- */
+
+.message-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+.bubble {
+  max-width: min(560px, 75%);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  word-break: break-word;
+}
+
+/* Kendi mesajlarim sagda ve vurgulu, gelenler solda ve notr. */
+.bubble--mine {
+  align-self: flex-end;
+  background-color: var(--accent);
+  color: #0b1020;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble--theirs {
+  align-self: flex-start;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble__time {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  opacity: 0.65;
+  text-align: right;
+}
+
+/* "yaziyor..." baloncugu: uc nokta sirayla yukari ziplayarak animasyon yapiyor. */
+.bubble--typing {
+  display: flex;
+  gap: 4px;
+  padding: 12px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-faint);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}
+
+.composer {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.composer__input {
+  flex: 1;
+}
+
+@media (max-width: 760px) {
+  .chat {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+
+  .chat__sidebar {
+    max-height: 220px;
+  }
+
+  .chat__main {
+    min-height: 60vh;
+  }
+}

@@ -1,0 +1,129 @@
+/*
+ * Giris yapmamis ziyaretcinin gordugu sayfalar: acilis, giris ve kayit.
+ *
+ * Arka plandaki iki yumusak isik (radial-gradient) koyu zemine derinlik
+ * veriyor; tek renk dolgu duz ve cansiz duruyordu.
+ */
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: var(--space-5);
+  background-image: radial-gradient(
+      circle at 15% 20%,
+      rgba(91, 140, 255, 0.16),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 75%, rgba(62, 207, 142, 0.12), transparent 45%);
+}
+
+/* --- acilis --- */
+
+.auth-hero {
+  max-width: 620px;
+  text-align: center;
+}
+
+.auth-hero__logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: var(--space-4);
+}
+
+.auth-hero__title {
+  font-size: 34px;
+  letter-spacing: -0.02em;
+}
+
+.auth-hero__subtitle {
+  margin-top: var(--space-3);
+  color: var(--text-dim);
+}
+
+.auth-hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.auth-hero__points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  text-align: left;
+}
+
+.auth-hero__points li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
+}
+
+.auth-hero__points strong {
+  font-size: 14px;
+}
+
+.auth-hero__points span {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* --- giris / kayit formu --- */
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 380px;
+  padding: var(--space-6);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.auth-card--wide {
+  max-width: 480px;
+}
+
+.auth-card__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  align-self: center;
+}
+
+.auth-card__title {
+  font-size: 22px;
+  text-align: center;
+}
+
+.auth-card__footer {
+  font-size: 14px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .auth-hero__title {
+    font-size: 26px;
+  }
+
+  .field-row {
+    flex-direction: column;
+  }
+
+  .auth-card {
+    padding: var(--space-5);
+  }
+}
